@@ -1,6 +1,7 @@
 debug <- TRUE
 png <- FALSE
 NEI <- NULL
+SCC <- NULL
 baltimore <- NULL
 losangeles <- NULL
 large <- FALSE
@@ -15,6 +16,7 @@ loadData <- function() {
             
             if ( debug ) print( "Using BIG-ASSED versions of NEI, losangeles and baltimore..." )
             NEI <<- readRDS( "../data/summarySCC_PM25.rds" )
+            SCC <<- readRDS( "../data/Source_Classification_Code.rds" )
             baltimore <<- NEI[ NEI$fips == "24510", ]
             losangeles <<- NEI[ NEI$fips == "06037", ]
             
@@ -22,6 +24,7 @@ loadData <- function() {
             
             if ( debug ) print( "Using TOY versions of NEI, losangeles and baltimore..." )
             NEI <<- read.csv( "../data/neiSample.csv" )
+            SCC <<- readRDS( "../data/Source_Classification_Code.rds" )
             baltimore <<- read.csv( "../data/baltimore.csv" )
             losangeles <<- read.csv( "../data/losangeles.csv" )
         }
@@ -36,7 +39,7 @@ sampleData <- function() {
     loadData()
     set.seed( 2112 )
     ## grab 5000 random rows
-    neiSample <<- NEI[ sample( nrow( NEI ), size = 5000, replace = F ), ]
+    neiSample <<- NEI[ sample( nrow( NEI ), size = 25000, replace = F ), ]
     
     write.csv( neiSample, file = "../data/neiSample.csv" )
     write.csv( baltimore, file = "../data/baltimore.csv" )
