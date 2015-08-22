@@ -1,5 +1,6 @@
 source( "load-data.R" )
 
+## Question 2: Have total emissions from PM2.5 decreased in the Baltimore City
 doPlot2 <- function() {
     
     loadData()

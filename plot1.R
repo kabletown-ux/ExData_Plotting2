@@ -1,5 +1,6 @@
 source( "load-data.R" )
 
+## Question 1: Have total emissions from PM2.5 decreased in the United States from 1999 to 2008?
 doPlot1 <- function() {
     
     loadData()

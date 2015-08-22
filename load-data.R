@@ -39,7 +39,7 @@ sampleData <- function() {
     loadData()
     set.seed( 2112 )
     ## grab 5000 random rows
-    neiSample <<- NEI[ sample( nrow( NEI ), size = 25000, replace = F ), ]
+    neiSample <<- NEI[ sample( nrow( NEI ), size = 250000, replace = F ), ]
     
     write.csv( neiSample, file = "../data/neiSample.csv" )
     write.csv( baltimore, file = "../data/baltimore.csv" )
