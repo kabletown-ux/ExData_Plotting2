@@ -8,7 +8,7 @@ doPlot5 <- function() {
     loadData()
     
     # Get Baltimore emissions from motor vehicle sources
-    balmorEmissions <- NEI[ (NEI$fips=="24510" ) & ( NEI$type=="ON-ROAD") , ]
+    balmorEmissions <- NEI[ ( NEI$fips == "24510" ) & ( NEI$type == "ON-ROAD") , ]
     # sum or avg?
     balmorEmissionsAggregate <- aggregate( Emissions ~ year, data = balmorEmissions, FUN = sum )
     
