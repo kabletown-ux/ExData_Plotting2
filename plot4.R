@@ -7,7 +7,7 @@ doPlot4 <- function() {
   
     loadData()
     
-    ## *love* this idea: hit all fields w/ one regex, instead of merging multiple grepl queries
+    ## hit all fields w/ one regex, instead of merging multiple grepl queries
     matcher <- '([Cc]oal.*[Cc]omb)|([Cc]omb.*[Cc]oal)'
     coalOrCombustionRelated <- grepl( matcher, SCC$Short.Name ) | grepl( matcher, SCC$EI.Sector ) | grepl( matcher, SCC$SCC.Level.Four )
     
@@ -26,7 +26,7 @@ doPlot4 <- function() {
         geom_bar( stat = "identity", fill = "grey", width = 0.875 ) +
         theme_classic() +
         #theme_bw() +  guides( fill = FALSE ) +
-        labs( x = "year", y = "Total PM2.5 Emission (Units?)" ) + 
+        labs( x = "year", y = "Total PM2.5 Emission (tons)" ) + 
         labs( title = "PM2.5 Coal Combustion Emissions Across US from 1999-2008")
  
     print( ggp )

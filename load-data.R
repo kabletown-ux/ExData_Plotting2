@@ -1,10 +1,10 @@
 debug <- TRUE
-png <- FALSE
+png <- TRUE
 NEI <- NULL
 SCC <- NULL
 baltimore <- NULL
 losangeles <- NULL
-large <- FALSE
+large <- TRUE
 
 loadData <- function() {
     

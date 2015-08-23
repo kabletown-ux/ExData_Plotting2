@@ -18,11 +18,10 @@ doPlot5 <- function() {
     if ( png ) png( filename = "plot5.png" )
     
     # TODO: Check accuracy in labels/units!
-    ggp <- ggplot( balmorEmissionsAggregate, aes( factor( year ), Emissions ) ) + #/10^5 ) ) +
+    ggp <- ggplot( balmorEmissionsAggregate, aes( factor( year ), Emissions ) ) +
         geom_bar( stat = "identity", fill = "grey", width = 0.875 ) +
         theme_classic() +
-        #theme_bw() +  guides( fill = FALSE ) +
-        labs( x = "year", y = "Total PM2.5 Emission (Units?)" ) + 
+        labs( x = "year", y = "Total PM2.5 Emission (Tons)" ) + 
         labs( title = "PM2.5 Motor Vehicle Emissions from 1999-2008" )
  
      print( ggp )

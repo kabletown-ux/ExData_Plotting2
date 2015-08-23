@@ -21,7 +21,7 @@ doPlot3 <- function() {
     ##onroadAggregate   <- aggregate( Emissions ~ year, onroad, mean )
     
     ## Much simpler!
-    baltimoreAggregate <- aggregate( Emissions ~ year + type, baltimore, mean )
+    baltimoreAggregate <- aggregate( Emissions ~ year + type, baltimore, sum )
     if ( debug ) print( baltimoreAggregate )
     
     # Open png device
